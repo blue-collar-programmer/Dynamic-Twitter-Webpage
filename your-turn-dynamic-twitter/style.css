@@ -7,11 +7,16 @@ body{
     width: 100%;
     margin: auto;
 }
+
 .main-container {
-    width: 100%;
+    min-width: 360px;
+    width: 85%;
+    border: #fafafa 1px solid;
+    margin: auto;
 }
 
 .header-container {
+    padding: 8px 10px;
     top: 0%;
     background-color: rgba(255, 255, 255, .880) ;
     position: sticky;
@@ -19,13 +24,12 @@ body{
 }
 
 .header-flex-container {
-    margin-top: 8px;
     display:flex;
+    justify-content: flex-start;
 }
 
 .back-arrow {
-    margin-right:6% ;
-    margin-left: 2%;
+    margin-right:4% ;
     padding-top: 10px;
     padding-left: 25px;
     background-image: url("assets/leftBackArrow.png");
@@ -35,6 +39,12 @@ body{
     justify-self: right;
 }
 
+.back-arrow:hover {
+    background-color: #dadada;
+    border: solid white 1px;
+    border-radius: 25px ;
+    cursor: pointer;
+}
 /*.back-arrow::before {
     content: '⬅';
 }*/
@@ -49,7 +59,7 @@ body{
 .tweetCount {
     font-size: .8em;
     color:grey;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
 
 .displayName::after {
@@ -70,15 +80,15 @@ body{
     top: 70%;
     left: 5%;
     border: 1px solid white;
-    border-radius: 50px;
+    border-radius: 100%;
     width: 78px;
     padding: 1px;
     background-color: white;
 }   
 
 .avatarImage {
-    border-radius: 50px;
-    width:78px;
+    border-radius: 100%;
+    width:100%;
 }
 
 .profileDetails {
@@ -104,13 +114,24 @@ body{
     border-radius: 20px;
 }
 
+.followButton:hover {
+    cursor: pointer;
+    opacity: 85%;
+}
+
 .optionsWidget {
     font-size: 1.1em;
     font-weight: bold;
     margin-top:10px;
     padding: 0 8px 10px;
     border-radius: 25px;
-    border: 1px solid #dadada;
+    border: 1px solid #f1f1f1;
+
+}
+
+.optionsWidget:hover {
+    cursor: pointer;
+    background-color: #dadada;
 
 }
 /*
@@ -119,9 +140,11 @@ set a flex box on the accont details container
 than style each
 */
 .profileDetails-section {
-    margin:25px 16px ;
+    width: 80%;
+    padding:16px 25px ;
     display: flex;
     flex-direction: column;
+    flex-wrap: .1;
 }
 
 .name {
@@ -202,24 +225,31 @@ than style each
     padding: 10px 0;
     margin-bottom: 12px;
 }
+
+.tweet-container {
+    width:80%;
+}
+
 .avatarImageMini {
     margin-left: 10px;
     height: 60%;
     width: 45px;
+    max-width: 50px;
 }
 
 .user-info-flex-container {
     color: rgb(27, 24, 24);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 5px;
      
 }
 
 .left-section-flex {
+    width:85%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
@@ -227,11 +257,13 @@ than style each
 .displayName2 {
     font-size: .9em;
     padding-left: 5px;
+    flex-grow: .1;
 }
 
 .userName2{
     font-size: 1em;
     padding: 0 5px;
+    flex-grow: .1;
 }
 
 .timeStamp {
@@ -239,12 +271,13 @@ than style each
     font-size: .8em;
     padding-left: 5px;
     color:grey;
+    flex-grow: .1;
 }
 
 
 .widget2Container {
     margin-top: none;
-    margin-left: 10%;
+    flex-grow: .1;
 }
 
 .optionsWidget2 {
@@ -254,6 +287,7 @@ than style each
     padding: 0 8px 10px;
     border-radius: 25px;
     border: 1px solid #f1f1f1;
+    flex-grow: .1;
     } 
     
 .tweetText {
@@ -261,9 +295,10 @@ than style each
 }
 
 .tweet-options-container {
+    width: 80%;
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
 
 }
 
@@ -284,4 +319,21 @@ than style each
 .shareImg {
     width: 18px;
     opacity: 70%;
+}
+
+@media only screen and (min-width: 600px){
+
+    .avatarContainer {
+        width: 15%;
+        border: 2px white solid;
+    }
+
+    .avatarImage {
+        width: 100%;
+    }
+
+    .profileDetails-section {
+        padding: 2.5% 1%;
+    }
+
 }
